@@ -10,6 +10,7 @@ const FilmDetails = (props) => {
       <h2>Film:{}</h2>
       <br />
       <h4>Abstract:{}</h4>
+      <button className="ui button primary" onClick={}>SAVE TO FAVORITES</button>
     </div>
   );
 };
