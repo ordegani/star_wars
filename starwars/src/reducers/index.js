@@ -6,7 +6,7 @@ const filmsReducer = () =>{
     ];
 }
 
-selectedFilmReducer = (selectedFilm=null, action) =>{
+const selectedFilmReducer = (selectedFilm=null, action) =>{
     if (action.type === 'FILM_SELECTED'){
         return action.payload;
     }
