@@ -4,3 +4,10 @@ export const selectFilm = (film)=> {
         payload:film
     };
 };
+
+export const saveToFavorites = (favorite)=> {
+    return{
+        type:'FILM_SAVED_TO_FAVORITES',
+        payload:favorite
+    };
+};
