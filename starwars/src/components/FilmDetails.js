@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import {fetchPost} from "../actions";
 
 const FilmDetails = (props) => {
   if (!selectedFilm) {
@@ -8,9 +7,9 @@ const FilmDetails = (props) => {
   }
   return (
     <div>
-      <h2>Film:{}</h2>
+      <h2>Film:{props.title}</h2>
       <br />
-      <h4>Abstract:{}</h4>
+      <h4>Abstract:{props.opening_crawl}</h4>
       <button className="ui button primary" onClick={}>SAVE TO FAVORITES</button>
     </div>
   );
@@ -22,4 +21,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchPost })(FilmDetails);
+export default connect(mapStateToProps)(FilmDetails);
