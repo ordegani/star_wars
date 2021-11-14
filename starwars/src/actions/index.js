@@ -1,3 +1,5 @@
+import swapi from '../apis/swapi';
+
 export const selectFilm = (film)=> {
     return{
         type:'FILM_SELECTED',
@@ -11,3 +13,10 @@ export const saveToFavorites = (favorite)=> {
         payload:favorite
     };
 };
+
+export const fetchPost = () =>{
+    return {
+        type:'FETCHED_POST'
+    }
+
+}

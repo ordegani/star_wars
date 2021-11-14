@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import {fetchPost} from "../actions";
 
 const FilmDetails = (props) => {
   if (!selectedFilm) {
@@ -21,4 +22,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(FilmDetails);
+export default connect(mapStateToProps, { fetchPost })(FilmDetails);
