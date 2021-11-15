@@ -4,17 +4,18 @@ import {saveToFavorites} from "../actions";
 
 const Favorites = (props) =>{
 if (!props.favorites){
-    return <h2>you haven't chosen any favorites yet</h2>
+    return null
 }
 return(
     <div>
-    <h2>favorites:{props.favorites.title}</h2>
+    <div><br />favorites: {props.favorites}</div>
     </div>
 )
 }
 const mapStateToProps = (state) => {
     return {
       favorites: state.favorites,
+      saveToFavorites: state.saveToFavorites
     };
   };
 

@@ -42,7 +42,7 @@ const mapDispatchToProps = (dispatch) =>{
     selectFilm: (film) => dispatch({type:"FILM_SELECTED", payload: film}),
     fetchData: async()=>{
         const response = await swapi.get('./');
-        return dispatch({type:"FETCHED_DATA", payload: response.results})
+        return dispatch({type:"FETCHED_DATA", payload: response?.data?.results})
     }
   };
 
