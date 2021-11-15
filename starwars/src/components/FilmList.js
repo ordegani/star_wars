@@ -5,7 +5,7 @@ import { fetchData } from "../actions";
 
 const FilmList = (props) => {
   const list = () => {
-    return props.fetchData.map((film) => {
+    return props.films.map((film) => {
       return (
         <div className="item" key={film.title}>
           <div className="right floated content">
