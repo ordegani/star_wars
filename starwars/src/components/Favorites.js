@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import {saveToFavorites} from "../actions";
 
 const Favorites = (props) =>{
-// if (!favorites){
-//     return <h2>you haven't chosen any favorites yet</h2>
-// }
+if (!props.favorites){
+    return <h2>you haven't chosen any favorites yet</h2>
+}
 return(
     <div>
     <h2>favorites:{props.favorites.title}</h2>

@@ -7,9 +7,7 @@ import swapi from "../apis/swapi";
 const FilmList = (props) => {
   useEffect(() => {
     props.fetchData();
-    return () => {
-  
-    }
+
   }, [])
   const list = () => {
   
@@ -41,10 +39,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>{
   return{
-    selectedFilm: (film) =>dispatch({type:"FILM_SELECTED", payload: film}),
+    selectFilm: (film) => dispatch({type:"FILM_SELECTED", payload: film}),
     fetchData: async()=>{
-        const response = await swapi.get('/');
-        return dispatch({type:"FETCHED_DATA", payload: response})
+        const response = await swapi.get('./');
+        return dispatch({type:"FETCHED_DATA", payload: response.results})
     }
   };
 
