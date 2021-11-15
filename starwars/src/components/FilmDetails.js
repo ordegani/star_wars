@@ -2,13 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 
 const FilmDetails = (props) => {
-if (!props.selectedFilm){
-  return <div>Select a film to show its abstract</div>}
+  if (!props.selectedFilm) {
+    return <div>Select a film to show its abstract</div>;
+  }
   return (
     <div>
       <div>Film:{props.selectedFilm.title}</div>
-      <div>Abstract:{props.selectedFilm.opening_crawl}</div><br />
-      <button className="ui button primary" onClick={() => props.saveToFavorites(props.selectedFilm.title)}>SAVE TO FAVORITES</button>
+      <div>Abstract:{props.selectedFilm.opening_crawl}</div>
+      <br />
+      <button
+        className="ui button primary"
+        onClick={() => props.saveToFavorites(props.selectedFilm.title)}
+      >
+        SAVE TO FAVORITES
+      </button>
     </div>
   );
 };
@@ -18,8 +25,10 @@ const mapStateToProps = (state) => {
     selectedFilm: state.selectedFilm,
   };
 };
-const mapDispatchToProps = (dispatch) =>{
-  return{
-    saveToFavorites: (film) => dispatch({type:"FILM_SAVED_TO_FAVORITES", payload: film})
-  }}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    saveToFavorites: (film) =>
+      dispatch({ type: "FILM_SAVED_TO_FAVORITES", payload: film }),
+  };
+};
 export default connect(mapStateToProps, mapDispatchToProps)(FilmDetails);
