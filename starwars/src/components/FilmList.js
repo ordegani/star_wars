@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { selectFilm } from "../actions";
-import { fetchData } from "../actions";
+// import { selectFilm } from "../actions";
+// import { fetchData } from "../actions";
+import swapi from "../apis/swapi";
 
 const FilmList = (props) => {
-  const list = () => {
+  useEffect(() => {
     props.fetchData();
+    return () => {
+  
+    }
+  }, [])
+  const list = () => {
+  
     return props.films.map((film) => {
       return (
         <div className="item" key={film.title}>
           <div className="right floated content">
             <button
               className="ui button primary"
-              onClick={() => film.selectFilm}
+              onClick={() => props.selectFilm(film)}
             >
               SELECT
             </button>
@@ -28,11 +35,22 @@ const FilmList = (props) => {
 const mapStateToProps = (state) => {
   return {
     films: state.films,
+
   };
+};
+
+const mapDispatchToProps = (dispatch) =>{
+  return{
+    selectedFilm: (film) =>dispatch({type:"FILM_SELECTED", payload: film}),
+    fetchData: async()=>{
+        const response = await swapi.get('/');
+        return dispatch({type:"FETCHED_DATA", payload: response})
+    }
+  };
+
 };
 
 export default connect(
   mapStateToProps,
-  { selectFilm },
-  { fetchData }
+  mapDispatchToProps
 )(FilmList);

@@ -1,6 +1,7 @@
 import React from "react";
 import FilmList from "./FilmList";
 import FilmDetails from "./FilmDetails";
+import Favorites from "./Favorites";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         </div>
         <div className="column eight wide">
           <FilmDetails />
+          <Favorites />
         </div>
       </div>
     </div>

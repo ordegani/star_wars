@@ -15,7 +15,7 @@ export const saveToFavorites = (favorite) => {
 };
 
 export const fetchData = () => async (dispatch) => {
-  const response = await swapi.get("./");
+  const response = await swapi.get("/");
 
   dispatch({ type: "FETCHED_DATA", payload: response });
 };

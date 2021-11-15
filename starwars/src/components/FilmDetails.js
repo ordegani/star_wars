@@ -9,7 +9,7 @@ const FilmDetails = (props) => {
     <div>
       <h2>Film:{props.title}</h2>
       <br />
-      <h4>Abstract:{props.opening_crawl}</h4>
+      <h2>Abstract:{props.opening_crawl}</h2>
       <button className="ui button primary" onClick={() => props.title}>SAVE TO FAVORITES</button>
     </div>
   );
