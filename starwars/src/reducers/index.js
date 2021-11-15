@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
 // import swapi from "../apis/swapi";
 
-const filmsReducer = () => {
-  // if (action.type === "FETCHED_DATA"){
-  // const response = await axios.get("https://swapi.dev/api/films");
-  // return response;
+const filmsReducer = (state = [], action) => {
+  if (action.type === "FETCHED_DATA") {
+    return action.payload;
+  }
+  return state;
 };
 
 const selectedFilmReducer = (selectedFilm = null, action) => {
