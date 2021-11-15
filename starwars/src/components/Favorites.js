@@ -8,7 +8,7 @@ if (!props.favorites){
 }
 return(
     <div>
-    <div><br />favorites: {props.favorites}</div>
+    <div><br />favorite: {props.favorites}</div>
     </div>
 )
 }

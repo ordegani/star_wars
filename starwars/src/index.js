@@ -8,9 +8,9 @@ import thunk from "redux-thunk";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
-// store.subscribe(()=>{
-//     localStorage.setItem('favorites', JSON.stringify(store.getState().favorites))
-//   })
+store.subscribe(()=>{
+    localStorage.setItem('favorites', store.favorites)
+  })
 
 ReactDOM.render(
   <Provider store={store}>

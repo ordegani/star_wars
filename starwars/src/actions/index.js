@@ -8,11 +8,11 @@ export const selectFilm = (film) => {
 };
 
 export const saveToFavorites = (favorite) => {
-  return {
-    type: "FILM_SAVED_TO_FAVORITES",
-    payload: favorite,
+    return {
+      type: "FILM_SAVED_TO_FAVORITES",
+      payload: favorite,
+    };
   };
-};
 
 export const fetchData = () => async (dispatch) => {
   const response = await swapi.get("/");

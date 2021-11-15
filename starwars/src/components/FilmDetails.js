@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import {saveToFavorites} from "../actions"
 
 const FilmDetails = (props) => {
 if (!props.selectedFilm){

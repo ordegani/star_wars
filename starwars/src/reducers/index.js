@@ -17,7 +17,7 @@ const selectedFilmReducer = (selectedFilm = null, action) => {
 
 const favoriteFilmsReducer = (favoriteFilm = null, action) => {
   if (action.type === "FILM_SAVED_TO_FAVORITES") {
-    return [...action.payload, action.payload];
+    return action.payload;
   }
   return favoriteFilm;
 };
