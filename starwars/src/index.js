@@ -5,10 +5,9 @@ import { createStore, applyMiddleware } from "redux";
 import App from "./components/App";
 import reducers from "./reducers";
 import thunk from "redux-thunk";
-import throttle from 'lodash.throttle';
+import throttle from "lodash.throttle";
 import { loadState } from "./components/LocalStorage";
-import { saveState
- } from "./components/LocalStorage";
+import { saveState } from "./components/LocalStorage";
 const persistedState = loadState();
 
 const store = createStore(reducers, persistedState, applyMiddleware(thunk));
@@ -20,7 +19,6 @@ store.subscribe(
     });
   }, 1000)
 );
-
 
 ReactDOM.render(
   <Provider store={store}>
