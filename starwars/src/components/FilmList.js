@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { selectFilm } from "../actions";
+import { fetchData } from "../actions";
 
-const FilmList = () => {
+const FilmList = (props) => {
   const list = () => {
     return props.films.map((film) => {
       return (
@@ -10,7 +11,7 @@ const FilmList = () => {
           <div className="right floated content">
             <button
               className="ui button primary"
-              onClick={() => this.props.selectFilm}
+              onClick={() => film.selectFilm}
             >
               SELECT
             </button>
@@ -29,4 +30,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { selectFilm })(FilmList);
+export default connect(mapStateToProps, { selectFilm },{ fetchData })(FilmList);

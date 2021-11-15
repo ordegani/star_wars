@@ -1,7 +1,10 @@
 import { combineReducers } from "redux";
+// import swapi from "../apis/swapi";
 
 const filmsReducer = () => {
-  return [];
+  // if (action.type === "FETCHED_DATA"){
+  // const response = await axios.get("https://swapi.dev/api/films");
+  // return response;
 };
 
 const selectedFilmReducer = (selectedFilm = null, action) => {
@@ -13,7 +16,7 @@ const selectedFilmReducer = (selectedFilm = null, action) => {
 
 const favoriteFilmsReducer = (favoriteFilm = null, action) => {
   if (action.type === "FILM_SAVED_TO_FAVORITES") {
-    return [...favorites, action.payload];
+    return [...action.payload, action.payload];
   }
   return favoriteFilm;
 };
@@ -21,5 +24,5 @@ const favoriteFilmsReducer = (favoriteFilm = null, action) => {
 export default combineReducers({
   films: filmsReducer,
   selectedFilm: selectedFilmReducer,
-  favorites: favoriteFilmsReducer
+  favorites: favoriteFilmsReducer,
 });

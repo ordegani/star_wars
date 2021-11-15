@@ -2,15 +2,15 @@ import React from "react";
 import { connect } from "react-redux";
 
 const FilmDetails = (props) => {
-  if (!selectedFilm) {
-    return <h2>Select a Film</h2>;
-  }
+  // if (!film) {
+  //   return <h2>Select a Film</h2>;
+  // }
   return (
     <div>
       <h2>Film:{props.title}</h2>
       <br />
       <h4>Abstract:{props.opening_crawl}</h4>
-      <button className="ui button primary" onClick={}>SAVE TO FAVORITES</button>
+      <button className="ui button primary" onClick={() => props.title}>SAVE TO FAVORITES</button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import {fetchPost} from "../actions";
+import {saveToFavorites} from "../actions";
 
 const Favorites = (props) =>{
 if (!favorites){
@@ -19,4 +19,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { fetchPost })(FilmDetails);
+export default connect(mapStateToProps, { saveToFavorites })(FilmDetails);
