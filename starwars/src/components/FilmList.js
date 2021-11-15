@@ -5,6 +5,7 @@ import { fetchData } from "../actions";
 
 const FilmList = (props) => {
   const list = () => {
+    props.fetchData();
     return props.films.map((film) => {
       return (
         <div className="item" key={film.title}>
@@ -30,4 +31,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { selectFilm },{ fetchData })(FilmList);
+export default connect(
+  mapStateToProps,
+  { selectFilm },
+  { fetchData }
+)(FilmList);
