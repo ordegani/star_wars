@@ -8,17 +8,22 @@ import thunk from "redux-thunk";
 import throttle from "lodash.throttle";
 import { loadState } from "./components/LocalStorage";
 import { saveState } from "./components/LocalStorage";
-const persistedState = loadState();
 
-const store = createStore(reducers, persistedState, applyMiddleware(thunk));
+// const persistedState = loadState();
 
-store.subscribe(
-  throttle(() => {
-    saveState({
-      favorites: store.getState(),
-    });
-  }, 1000)
+const store = createStore(
+  reducers,
+  //  persistedState,
+  applyMiddleware(thunk)
 );
+
+// store.subscribe(
+//   throttle(() => {
+//     saveState({
+//       favorites: store.getState(),
+//     });
+//   }, 1000)
+// );
 
 ReactDOM.render(
   <Provider store={store}>
