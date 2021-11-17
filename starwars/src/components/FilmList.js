@@ -14,7 +14,7 @@ const FilmList = (props) => {
         <div className="item" key={film.title}>
           <div className="right floated content">
             <button
-              className="ui button primary"
+              className="ui small button primary"
               onClick={() => props.selectFilm(film)}
             >
               SELECT

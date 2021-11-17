@@ -15,10 +15,17 @@ const selectedFilmReducer = (selectedFilm = null, action) => {
   return selectedFilm;
 };
 
-const favoriteFilmsReducer = (favoriteFilm = null, action) => {
+const favoriteFilmsReducer = (favoriteFilm = [], action) => {
   if (action.type === "FILM_SAVED_TO_FAVORITES") {
-    return action.payload;
-  }
+    let isExists = false;
+    favoriteFilm.find((favorite) => {
+      if (favorite=== action.payload) {
+        isExists = true;
+      }
+    });
+    if (!isExists) {
+    return [...favoriteFilm, action.payload];
+  }}
   return favoriteFilm;
 };
 

@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { loadState } from "./LocalStorage";
 
 const FilmDetails = (props) => {
+  useEffect(() => {
+loadState()
+    
+  }, [props.selectedFilm])
   if (!props.selectedFilm) {
-    return <div>Select a film to show its abstract</div>;
+    return <div>Select a film to show its abstract</div>
   }
   return (
     <div>

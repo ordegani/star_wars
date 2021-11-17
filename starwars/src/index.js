@@ -9,7 +9,7 @@ import throttle from "lodash.throttle";
 import { loadState } from "./components/LocalStorage";
 import { saveState } from "./components/LocalStorage";
 
-// const persistedState = loadState();
+const persistedState = loadState;
 
 const store = createStore(
   reducers,
@@ -17,13 +17,13 @@ const store = createStore(
   applyMiddleware(thunk)
 );
 
-// store.subscribe(
-//   throttle(() => {
-//     saveState({
-//       favorites: store.getState(),
-//     });
-//   }, 1000)
-// );
+store.subscribe(
+  throttle(() => {
+    saveState({
+      allState: store.getState(),
+    });
+  }, 1000)
+);
 
 ReactDOM.render(
   <Provider store={store}>
