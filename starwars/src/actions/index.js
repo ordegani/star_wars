@@ -14,6 +14,13 @@ export const saveToFavorites = (favorite) => {
   };
 };
 
+// export const loadData = (favoritesdata) =>{
+//   return{
+//     type:"LOAD_STATE",
+//     payload: favoritesdata
+//   }
+// }
+
 export const fetchData = () => async (dispatch) => {
   const response = await swapi.get("/");
 

@@ -1,9 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import { saveToFavorites } from "../actions";
+import { loadState } from "./LocalStorage";
 
 const Favorites = (props) => {
-  if (props.favorites != []) {
+
+  // loadState();
+  // props.loadState();
+  // if (props.favoritesdata = undefined){return null}
+  if (props.favorites === []) {
+    return null}
     return props.favorites.map((favorite) => {
       return (
         <div className="ui divided list">
@@ -14,13 +20,21 @@ const Favorites = (props) => {
         </div>
       );
     });
-  }
 };
 const mapStateToProps = (state) => {
   return {
     favorites: state.favorites,
     saveToFavorites: state.saveToFavorites,
   };
-};
+}
 
-export default connect(mapStateToProps, { saveToFavorites })(Favorites);
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     loadState: (favoritesdata) => dispatch({ type: "LOAD_STATE", payload: favoritesdata }),
+//   };
+// };
+
+
+export default connect(mapStateToProps,
+  //  mapDispatchToProps
+   )(Favorites);

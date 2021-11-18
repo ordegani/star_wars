@@ -17,20 +17,21 @@ const selectedFilmReducer = (selectedFilm = null, action) => {
 
 const favoriteFilmsReducer = (favoriteFilm = [], action) => {
   if (action.type === "FILM_SAVED_TO_FAVORITES") {
-    let isExists = false;
-    favoriteFilm.find((favorite) => {
-      if (favorite=== action.payload) {
-        isExists = true;
-      }
-    });
-    if (!isExists) {
     return [...favoriteFilm, action.payload];
-  }}
+  }
   return favoriteFilm;
 };
+
+// const favoritesdataReducer = (favoritesdataReducer, action) => {
+//   if (action.type === "LOAD_STATE") {
+//     return action.payload;
+//   }
+//   return favoritesdataReducer;
+// };
 
 export default combineReducers({
   films: filmsReducer,
   selectedFilm: selectedFilmReducer,
   favorites: favoriteFilmsReducer,
+  // favoritesdata: favoritesdataReducer,
 });

@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { loadState } from "./LocalStorage";
 
 const FilmDetails = (props) => {
-  useEffect(() => {
-loadState()
+//   useEffect(() => {
+// loadState()
     
-  }, [props.selectedFilm])
+//   }, [props.selectedFilm])
   if (!props.selectedFilm) {
     return <div>Select a film to show its abstract</div>
   }

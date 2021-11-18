@@ -9,7 +9,7 @@ import throttle from "lodash.throttle";
 import { loadState } from "./components/LocalStorage";
 import { saveState } from "./components/LocalStorage";
 
-const persistedState = loadState;
+// const persistedState = loadState;
 
 const store = createStore(
   reducers,
@@ -19,9 +19,9 @@ const store = createStore(
 
 store.subscribe(
   throttle(() => {
-    saveState({
-      allState: store.getState(),
-    });
+    saveState(
+      store.getState(),
+    );
   }, 1000)
 );
 

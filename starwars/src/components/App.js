@@ -8,7 +8,7 @@ const App = () => {
     <div className="ui container vertically padded grid">
 
 
-      <div class="ui divider"></div>
+      {/* <div class="ui divider"></div> */}
 
       <div className="ui row">
         <div className="column four wide">
